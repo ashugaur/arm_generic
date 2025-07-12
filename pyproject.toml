@@ -1,0 +1,31 @@
+[project]
+name = "arm-generic"
+version = "0.1.0"
+description = "Association rule mining generic examples."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastparquet>=2024.11.0",
+    "matplotlib>=3.10.3",
+    "mlxtend>=0.23.4",
+    "pandas>=2.3.1",
+    # "twine>=6.1.0",
+]
+authors = [
+    {name = "AshutoshGaur", email = "ashutoshgaur@live.com"},
+]
+keywords = ["Associated rule mining on generic set of data."]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.pytest.ini_options]
+pythonpath = "src"
