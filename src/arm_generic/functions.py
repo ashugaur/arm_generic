@@ -85,7 +85,7 @@ class AssociationAnalyzer:
 
     def preprocess_data(self):
         """Convert item combinations to transaction format"""
-        print("🔄 Preprocessing data...")
+        print("\n🔄 Preprocessing data...")
 
         # Split item combinations into lists
         item_lists = []
@@ -196,7 +196,7 @@ class AssociationAnalyzer:
 
         print(f"Total s: {total_s}")
         print(f"Total unique combinations: {len(item_counts)}")
-        print("\nTop 10 most prescribed combinations:")
+        print("\nTop 10 combinations:")
 
         for item, count in item_counts.head(10).items():
             percentage = (count / total_s) * 100
@@ -283,8 +283,8 @@ class AssociationAnalyzer:
                     "Conviction": round(rule["conviction"], 3),
                     "Leverage": round(rule["leverage"], 4),
                     "Zhang_Metric": round(rule["zhangs_metric"], 4),
-                    "s_Both": s_with_both,
-                    "s_item_A": s_with_antecedent,
+                    "sum_Both": s_with_both,
+                    "sum_item_A": s_with_antecedent,
                     "Rule_Strength": self._categorize_rule_strength(
                         rule["confidence"], rule["lift"]
                     ),
@@ -873,7 +873,7 @@ class AssociationAnalyzer:
             max_confidence = item_data["Confidence"].max()
             avg_lift = item_data["Lift"].mean()
             max_lift = item_data["Lift"].max()
-            total_s = item_data["s_A"].iloc[
+            total_s = item_data["sum_A"].iloc[
                 0
             ]  # Same for all rows of this item
             strong_relationships = len(
@@ -917,7 +917,7 @@ class AssociationAnalyzer:
                         + 1,
                         "Confidence_%": row["Confidence_%"],
                         "Lift": row["Lift"],
-                        "s_Both": row["s_Both"],
+                        "sum_Both": row["sum_Both"],
                         "Rule_Strength": row["Rule_Strength"],
                     }
                 )
