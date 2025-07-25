@@ -5,6 +5,8 @@ build/
 dist/
 wheels/
 *.egg-info
+arm_generic.code-workspace
+
 
 # Virtual environments
 .venv
