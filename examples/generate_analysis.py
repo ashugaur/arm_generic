@@ -1,4 +1,4 @@
-# %% Dry test
+# %% ARM example
 
 ## Dependencies
 import os
