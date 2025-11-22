@@ -8,6 +8,7 @@ dependencies = [
     "fastparquet>=2024.11.0",
     "matplotlib>=3.10.3",
     "mlxtend>=0.23.4",
+    "openpyxl>=3.1.5",
     "pandas>=2.3.1",
     # "twine>=6.1.0",
 ]
